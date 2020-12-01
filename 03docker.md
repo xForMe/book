@@ -27,9 +27,11 @@ docker pull redis:latest
 docker run -itd --name redis-test -p 6379:6379 redis
 ```
 
-## docker file
+## docker spark
 
 ### 定制spark 的镜像文件
+
+[镜像地址](https://mirrors.ocf.berkeley.edu/apache/spark/spark-2.4.7/)
 
 ```shell
 FROM singularities/hadoop:2.8
@@ -81,18 +83,26 @@ RUN echo '#!/usr/bin/env bash' > /usr/bin/master \
 执行dockerfile
 
 ```shell
-docker build -t sweet/spark:2.4.7 .
+docker build -t hpj3498547/spark:2.4.7 .
+```
+
+推送镜像
+
+```shell
+docker push hpj3498547/spark:2.4.7
 ```
 
 
 
 ### 运行镜像
 
+docker compose yml [相关参数](https://www.cnblogs.com/ray-mmss/p/10868754.html)
+
 ```yaml
 version: "2"
 services:
   master:
-    image: sweet/spark
+    image: hpj3498547/spark
     command: start-spark master
     hostname: master
     ports:
@@ -101,7 +111,7 @@ services:
       - "8080:8080"
       - "50070:50070"
   worker:
-    image: singularities/spark
+    image: hpj3498547/spark
     command: start-spark worker master
     environment:
       SPARK_WORKER_CORES: 1
@@ -115,4 +125,6 @@ services:
 ```shell
 docker-compose up
 ```
+
+验证
 
