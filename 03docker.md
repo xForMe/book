@@ -23,6 +23,14 @@ docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=127.0.0.1 --env ADVER
 拉取镜像
 
 ```shell
+docker pull spotify/kafka
+```
+
+
+
+### docker redis
+
+```shell
 docker pull redis:latest
 docker run -itd --name redis-test -p 6379:6379 redis
 ```
@@ -92,7 +100,7 @@ docker build -t hpj3498547/spark:2.4.7 .
 docker push hpj3498547/spark:2.4.7
 ```
 
-
+查看远程[镜像](https://hub.docker.com/repository/docker/hpj3498547/spark)
 
 ### 运行镜像
 
