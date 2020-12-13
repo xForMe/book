@@ -164,3 +164,104 @@ DataStream<CountVo> countStream = text
 )
 ```
 
+## table
+
+maven引入
+
+```xml
+-- 调用tableApi
+<dependency>
+      <groupId>org.apache.flink</groupId>
+      <artifactId>flink-table-api-scala-bridge_${scala.binary.version}</artifactId>
+      <version>${flink.version}</version>
+      <scope>provided</scope>
+    </dependency>
+-- 本地IDE调用
+<dependency>
+  <groupId>org.apache.flink</groupId>
+  <artifactId>flink-table-planner_2.11</artifactId>
+  <version>1.11.2</version>
+  <scope>provided</scope>
+</dependency>
+<!-- or.. (for the new Blink planner) -->
+<dependency>
+  <groupId>org.apache.flink</groupId>
+  <artifactId>flink-table-planner-blink_2.11</artifactId>
+  <version>1.11.2</version>
+  <scope>provided</scope>
+</dependency>
+-- 从kafka里读取消息转化为table
+<dependency>
+  <groupId>org.apache.flink</groupId>
+  <artifactId>flink-table-common</artifactId>
+  <version>1.11.2</version>
+  <scope>provided</scope>
+</dependency>
+```
+
+### 流程
+
+[注册tableEnvironment及使用何种执行计划](https://ci.apache.org/projects/flink/flink-docs-release-1.11/dev/table/common.html#main-differences-between-the-two-planners)
+
+```scala
+ val fsSettings = EnvironmentSettings.newInstance()
+      .inStreamingMode()
+      .useOldPlanner() // old planner
+      .build()
+    val fsEnv = StreamExecutionEnvironment.getExecutionEnvironment
+    val fsTableEnv = StreamTableEnvironment.create(fsEnv, fsSettings)
+```
+
+在catalog中创建table
+
+```scala
+val path = "/Users/xforme/Desktop/workspace/learn/sweet/flink-scala/doc/sql.txt";
+    val schema = new Schema()
+      .field("id", DataTypes.INT())
+      .field("name", DataTypes.STRING())
+      .field("score", DataTypes.INT())
+    fsTableEnv.connect(new FileSystem().path(path))
+      .withFormat(new OldCsv)
+      .inAppendMode()
+      .withSchema(schema)
+      .createTemporaryTable("score")
+```
+
+查询
+
+```scala
+//从env中获取table
+val scoreTable: Table = fsTableEnv.from("score")
+//执行where
+val filterTable:Table = scoreTable.filter($"id" === 1).select($"name", $"score")
+
+```
+
+执行并打印
+
+```scala
+filterTable.execute().print()
+```
+
+将table转化成datastream,flink转化stream的时候支持两种模式：
+
+1. append stream
+2. Retract  stream
+   1. 使用Retract stream 的时候与需要table source 读取的时候保持一致```.inRetractMode()```
+   2. 注意source 是否支持update-mode
+   3. retract stream 中返回tulp2，第一个参数为Boolean，true为insert ，false为 delete
+```scala
+// convert the Table into an append DataStream of Row
+val dsRow: DataStream[Row] = tableEnv.toAppendStream[Row](table)
+
+
+// convert the Table into a retract DataStream of Row.
+//   A retract stream of type X is a DataStream[(Boolean, X)]. 
+//   The boolean field indicates the type of the change. 
+//   True is INSERT, false is DELETE.
+val retractStream: DataStream[(Boolean, Row)] = tableEnv.toRetractStream[Row](table)
+```
+
+### 时间特性
+
+定义处理时间
