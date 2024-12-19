@@ -1,0 +1,86 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="25.0.3">
+  <diagram name="第 1 页" id="wrYZcNoJNyU1oX4eKvRr">
+    <mxGraphModel dx="1221" dy="759" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="gqWxrz_PafX3EHHGCUia-2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="eM_BsglUO66G7toR1t27-1" target="gqWxrz_PafX3EHHGCUia-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-3" value="仿真计算" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gqWxrz_PafX3EHHGCUia-2">
+          <mxGeometry x="-0.2" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="eM_BsglUO66G7toR1t27-1" target="gqWxrz_PafX3EHHGCUia-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eM_BsglUO66G7toR1t27-1" value="采集的流量、压力、温度" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="350" y="150" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gqWxrz_PafX3EHHGCUia-1" target="gqWxrz_PafX3EHHGCUia-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-6" value="RMSE" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gqWxrz_PafX3EHHGCUia-5">
+          <mxGeometry x="-0.3429" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-1" value="得到仿真计算结果" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="280" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gqWxrz_PafX3EHHGCUia-4" target="gqWxrz_PafX3EHHGCUia-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-4" value="精度分析" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="370" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gqWxrz_PafX3EHHGCUia-7" target="gqWxrz_PafX3EHHGCUia-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-7" value="神经网络预测门站流量" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="280" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gqWxrz_PafX3EHHGCUia-9" target="gqWxrz_PafX3EHHGCUia-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-9" value="精度分析" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="370" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="gqWxrz_PafX3EHHGCUia-14" target="gqWxrz_PafX3EHHGCUia-21">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="433" y="585" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-19" value="预测异常、设备问题" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gqWxrz_PafX3EHHGCUia-18">
+          <mxGeometry x="-0.2" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gqWxrz_PafX3EHHGCUia-14" target="gqWxrz_PafX3EHHGCUia-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-14" value="精度异常分析" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="460" width="286" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-21" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="170" y="545" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="gqWxrz_PafX3EHHGCUia-22" target="gqWxrz_PafX3EHHGCUia-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-26" value="PCA分析异常" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="gqWxrz_PafX3EHHGCUia-25">
+          <mxGeometry x="-0.3455" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-22" value="仿真异常，预测正常" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="369.5" y="570" width="127" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="gqWxrz_PafX3EHHGCUia-24" value="历史数据与当前数据比较" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="371" y="670" width="125.5" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
